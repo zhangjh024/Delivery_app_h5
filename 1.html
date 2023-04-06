@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.1/codemirror.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.1/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.1/mode/javascript/javascript.min.js"></script>
+  <style>
+    #editor { height: 200px; }
+    #submitBtn{
+      height: 30px;
+      width: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div id="editor"></div>
+  <button id="submitBtn">提交</button>
+  <pre id="result"></pre>
+
+  <script>
+    const editor = CodeMirror(document.getElementById("editor"), {
+      mode: "javascript",
+      lineNumbers: true,
+      value: "function example() {\n  // 在这里编写代码\n}"
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      const code = editor.getValue();
+      // 提交代码到后端进行评估
+    });
+  </script>
+</body>
+</html>
